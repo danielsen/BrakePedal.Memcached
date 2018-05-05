@@ -27,38 +27,38 @@ Dependencies:
 
 1. Begin with a Memcached client and repository:
 
-    MemcachedClient client = new MemcachedClient();
-    var repository = new MemcachedThrottleRepository(client);
+        MemcachedClient client = new MemcachedClient();
+        var repository = new MemcachedThrottleRepository(client);
 
 2. Configure a policy:
 
-    var loginPolicy = new ThrottlePolicy(repository)
-    {
-        Name = "LoginAttempts",
-        Prefixes = new[] {"login:attempts"},
-        Limiters = new Limiter[]
+        var loginPolicy = new ThrottlePolicy(repository)
         {
-            new Limiter().Limit(3).Over(TimeSpan.FromSeconds(10)) 
-        }
-    };
+            Name = "LoginAttempts",
+            Prefixes = new[] {"login:attempts"},
+            Limiters = new Limiter[]
+            {
+                new Limiter().Limit(3).Over(TimeSpan.FromSeconds(10)) 
+            }
+        };
 
 Once the policies have been defined they can be used as follows:
 
 1. Create a key that can unique identify the requester.
 
-    var key = new SimpleThrottleKey("username");
+        var key = new SimpleThrottleKey("username");
 
 2. Check the policy:
 
-    var check = loginPolicy.Check(key); // NOTE: by default, calling the check method will increment the counter.
-                                        // If you want to check the status of a policy but not increment the counter
-                                        // pass in false to the increment parameter as follows.
-                                        // loginPolicy.Check(key, increment = false); 
+        var check = loginPolicy.Check(key); // NOTE: by default, calling the check method will increment the counter.
+                                            // If you want to check the status of a policy but not increment the counter
+                                            // pass in false to the increment parameter as follows.
+                                            // loginPolicy.Check(key, increment = false); 
         
-    if (check.IsThrottled)
-    {
-        throw new Exception($"Requests throttled. Maximum allowed { check.Limiter.Count } per { check.Limiter.Period }.");
-    }
+        if (check.IsThrottled)
+        {
+            throw new Exception($"Requests throttled. Maximum allowed { check.Limiter.Count } per { check.Limiter.Period }.");
+        }
 
 ### References
 
