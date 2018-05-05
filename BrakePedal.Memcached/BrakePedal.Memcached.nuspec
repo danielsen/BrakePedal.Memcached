@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>BrakePedal.Memcached</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Dan Nielsen</authors>
+    <owners>danielsen</owners>
+    <licenseUrl>http://raw.githubusercontent.com/danielsen/BrakePedal.Memcached/Master/LICENSE/</licenseUrl>
+    <projectUrl>http://github.com/danielsen/BrakePedal.Memcached</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <copyright>Copyright 2018</copyright>
+    <tags>trottling rate-limit rate limit memcached</tags>
+    <dependencies>
+      <dependency id="BrakePedal" version="1.0.3" />
+      <dependency id="EnyimMemcached" version="2.16.0" />
+    </dependencies>
+  </metadata>
+</package>

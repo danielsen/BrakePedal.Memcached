@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("BrakePedal.Memcached")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("The BrakePedal.Memcached package contains an implmentation of a BreakPedal repository which uses Enyim.Memcached (https://github.com/enyim/EnyimMemcached) to back the repository.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Dan Nielsen")]
 [assembly: AssemblyProduct("BrakePedal.Memcached")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
