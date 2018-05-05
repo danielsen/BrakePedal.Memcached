@@ -9,7 +9,7 @@
     <licenseUrl>http://raw.githubusercontent.com/danielsen/BrakePedal.Memcached/Master/LICENSE/</licenseUrl>
     <projectUrl>http://github.com/danielsen/BrakePedal.Memcached</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>$description$</description>
+    <description>The BrakePedal.Memcached package contains an implmentation of a BreakPedal repository which uses Enyim.Memcached (https://github.com/enyim/EnyimMemcached) to back the repository.</description>
     <copyright>Copyright 2018</copyright>
     <tags>trottling rate-limit rate limit memcached</tags>
     <dependencies>
@@ -17,4 +17,7 @@
       <dependency id="EnyimMemcached" version="2.16.0" />
     </dependencies>
   </metadata>
+  <files>
+    <file src="bin\Release\BrakePedal.Memcached.*" target="lib/net461" />
+  </files>
 </package>
